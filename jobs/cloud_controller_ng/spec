@@ -858,6 +858,16 @@ properties:
     description: "Internal url used to communicate with traffic_controller"
     default: "http://loggregator-trafficcontroller.service.cf.internal:8081"
 
+  cc.query_cache.enabled:
+    description: "Enable the CCDB query cache"
+    default: false
+  cc.query_cache.ttl_seconds:
+    description: "Time to live for a cached CCDB query result"
+    default: 60
+  cc.query_cache.etcd_uri:
+    description: "URI to the shared etcd instance"
+    default: ""
+
   perm.enabled:
     description: "Enable CF Permissions external service. Requires perm link to take effect"
     default: false

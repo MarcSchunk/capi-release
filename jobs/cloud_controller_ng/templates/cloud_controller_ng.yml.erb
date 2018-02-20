@@ -330,6 +330,12 @@ allowed_cors_domains: <%= p("cc.allowed_cors_domains").to_json %>
 statsd_host: <%= p("cc.statsd_host") %>
 statsd_port: <%= p("cc.statsd_port") %>
 
+<% if p("cc.query_cache.enabled") %>
+query_cache:
+  ttl_seconds: <%= p("cc.query_cache.ttl_seconds") %>
+  etcd_uri: <%= p("cc.query_cache.etcd_uri") %>
+<% end %>
+
 security_event_logging:
   enabled: <%= p("cc.security_event_logging.enabled") %>
   file: /var/vcap/sys/log/cloud_controller_ng/security_events.log
